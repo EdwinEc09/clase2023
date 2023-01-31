@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora </title>
+    <script src="Calculadora.js" defer></script>
+</head>
+<body>
+    <p id="display">0</p>
+    <button type="button" id="boton1" value="1" class="digito">1</button>
+    <button type="button" id="boton2" value="2" class="digito">2</button>
+    <button type="button" id="boton3" value="3" class="digito">3</button>
+    <button type="button" id="suma" value="+" class="operador">+</button>
+    <br>
+    <button type="button" id="boton4" value="4" class="digito">4</button>
+    <button type="button" id="boton5" value="5" class="digito">5</button>
+    <button type="button" id="boton6" value="6" class="digito">6</button>
+    <br>
+    <button type="button" id="boton7" value="7" class="digito">7</button>
+    <button type="button" id="boton8" value="8" class="digito">8</button>
+    <button type="button" id="boton9" value="9" class="digito">9</button>
+    <br>
+    <button type="button" id="boton0" value="0" class="digito">0</button>
+    <button type="button" id="igual">=</button>
+
+    <script>
+        
+/* function suma(){
+                var valor1 = document.getElementById('valor1').value;
+                var valor2 = document.getElementById('valor2').value;
+                if(valor1!=='' && valor2!==''){
+                    var suma = parseInt(valor1)+parseInt(valor2);
+                    document.getElementById('display').value = suma;
+                    
+                }
+            }
+*/
+function operador (op){
+  //-- Segun el estado hacemos una cosa u otra
+if (estado == ESTADO.OP1){
+    display.innerHTML += op;
+    estado = ESTADO.OPERATION;
+}else if(estado == ESTADO.OP2_INIT){
+    display.innerHTML += op;
+    estado = ESTADO.OP2;
+}else if (estado == ESTADO.OP2){
+    display.innerHTML += op;
+    estado = ESTADO.OP2;
+}
+}
+op = document.getElementsByClassName("operador")
+//-- Insertar simbolo de operador
+for (i=0; i<operador.length; i++) {
+op[i].onclick = (ev) => {
+    operador(ev.target.value)
+}
+}
+    </script>
+</body>
+</html>
